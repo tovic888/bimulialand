@@ -25,7 +25,8 @@
             'float': 'float 6s ease-in-out infinite',
             'glow': 'glow 3s ease-in-out infinite alternate',
             'pulse-slow': 'pulse 5s ease-in-out infinite',
-            'fade-in': 'fadeIn 1s ease-out forwards'
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'spin-slow': 'spin 10s linear infinite'
           },
           keyframes: {
             float: {
@@ -130,22 +131,14 @@
       border: none;
     }
     
-    .video-placeholder {
+    .mea-logo {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(6, 182, 212, 0.3));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.3s ease;
-    }
-    
-    .video-container.loaded .video-placeholder {
-      opacity: 0;
-      pointer-events: none;
+      bottom: -25px;
+      right: -25px;
+      width: 80px;
+      height: 80px;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
+      animation: spin-slow 20s linear infinite;
     }
     
     /* Scrollbar styling */
@@ -164,7 +157,7 @@
     
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
-      .particle, [class*="animate-"] {
+      .particle, [class*="animate-"], .mea-logo {
         animation: none !important;
       }
     }
@@ -206,18 +199,22 @@
     <!-- Projects Section -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
       <!-- Kertamulya Project -->
-      <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 shadow-xl islamic-border hover:shadow-emerald-500/20 transition-all duration-300">
+      <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 shadow-xl islamic-border hover:shadow-emerald-500/20 transition-all duration-300 relative">
         <div class="absolute top-4 right-4 text-2xl text-emerald-400">
           <i class="fas fa-mosque"></i>
         </div>
         
+        <!-- MEA Logo -->
+        <img src="https://i.imgur.com/JqYeZnW.png" alt="MEA Award" class="mea-logo">
+        
         <h3 class="text-2xl font-bold mb-4 text-emerald-400">Kertamulya Residence</h3>
         
-        <div class="video-container mb-6" id="yt-video">
-          <div class="video-placeholder">
-            <i class="fas fa-play text-white text-4xl"></i>
-          </div>
-          <!-- YouTube iframe will be loaded by JS -->
+        <div class="video-container mb-6">
+          <iframe src="https://www.youtube.com/embed/6G_1fBYL18k?autoplay=1&mute=1&loop=1&playlist=6G_1fBYL18k&controls=0&modestbranding=1&rel=0" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  loading="lazy"></iframe>
         </div>
         
         <p class="opacity-90 mb-6">
@@ -411,32 +408,7 @@
         }
       }
       
-      // Lazy load YouTube video
-      function loadYouTubeVideo() {
-        const videoContainer = document.getElementById('yt-video');
-        const iframe = document.createElement('iframe');
-        
-        iframe.src = 'https://www.youtube.com/embed/6G_1fBYL18k?autoplay=1&mute=1&loop=1&controls=0&playlist=6G_1fBYL18k&enablejsapi=1';
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        iframe.setAttribute('allowfullscreen', '');
-        iframe.setAttribute('loading', 'lazy');
-        
-        iframe.onload = function() {
-          videoContainer.classList.add('loaded');
-        };
-        
-        videoContainer.appendChild(iframe);
-      }
-      
-      // Initialize everything
       createParticles();
-      
-      // Only load YouTube video when user interacts with the video container
-      const videoPlaceholder = document.querySelector('.video-placeholder');
-      videoPlaceholder.addEventListener('click', function() {
-        loadYouTubeVideo();
-      }, { once: true });
     });
   </script>
 </body>
