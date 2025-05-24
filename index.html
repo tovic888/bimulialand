@@ -4,121 +4,120 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BIMULIA LAND - Islamic Property Visionary</title>
+  <meta name="description" content="BIMULIA LAND - Pengembang properti Islami premium dengan konsep hunian berkelas dunia berdasarkan syariat Islam">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Amiri:wght@400;700&display=swap" as="style">
+  <link rel="preload" href="https://i.imgur.com/aVIjrGJ.png" as="image">
+  
+  <!-- DNS prefetch for external domains -->
+  <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//i.imgur.com">
+  <link rel="dns-prefetch" href="//www.youtube.com">
+  
+  <!-- Tailwind via CDN with custom config -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'poppins': ['Poppins', 'sans-serif'],
+            'amiri': ['Amiri', 'serif']
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate',
+            'pulse-slow': 'pulse 5s ease-in-out infinite',
+            'fade-in': 'fadeIn 1s ease-out forwards'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' }
+            },
+            glow: {
+              '0%, 100%': { 'box-shadow': '0 0 10px rgba(16, 185, 129, 0.7)' },
+              '50%': { 'box-shadow': '0 0 20px rgba(34, 211, 238, 0.9)' }
+            },
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome with subset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Inline critical CSS -->
   <style>
-    /* Custom Fonts */
-    body {
-      font-family: 'Poppins', sans-serif;
+    :root {
+      --emerald: #10B981;
+      --gold: #D4AF37;
+      --cyan: #06b6d4;
+      --dark: #0f172a;
     }
     
-    .arabic-font {
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(ellipse at bottom, #0f172a 0%, #090a0f 100%);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .arabic {
       font-family: 'Amiri', serif;
     }
     
-    /* Cosmic Background */
-    .cosmic-bg {
-      background: radial-gradient(ellipse at bottom, #0f172a 0%, #090a0f 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .cosmic-bg::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.05) 0%, transparent 25%),
-        radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.05) 0%, transparent 25%),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54 50L42 38l-6 6-6-6-6 6-6-6L6 50l6 6 6-6 6 6 6-6 6 6zM0 20h60v6H0v-6zm0-6h60v6H0v-6zm0-6h60v6H0V8zm0-6h60v6H0V2zm0-6h60v6H0V-4z' fill='%2316a34a' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-    }
-    
-    /* Gold & Emerald Gradient */
-    .premium-gradient {
-      background: linear-gradient(135deg, #10B981 0%, #D4AF37 50%, #F9D423 100%);
+    .premium-text {
+      background: linear-gradient(135deg, var(--emerald) 0%, var(--gold) 50%, #F9D423 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
     
-    /* 3D Logo Animation */
-    @keyframes cosmicFloat {
-      0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
-      25% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
-      50% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
-      75% { transform: translateY(-10px) rotateX(-5deg) rotateY(-5deg); }
+    .islamic-border {
+      position: relative;
+      padding-bottom: 1rem;
     }
     
-    /* Logo Glow Animation */
-    @keyframes logoGlow {
-      0%, 100% { 
-        filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.7)); 
-      }
-      50% { 
-        filter: drop-shadow(0 0 25px rgba(34, 211, 238, 0.9)); 
-      }
-    }
-    
-    /* Crescent Moon Animation */
-    @keyframes crescentPulse {
-      0% { transform: scale(1) rotate(-30deg); opacity: 0.8; }
-      50% { transform: scale(1.2) rotate(-25deg); opacity: 1; }
-      100% { transform: scale(1) rotate(-30deg); opacity: 0.8; }
-    }
-    
-    /* Project Card Hover */
-    @keyframes cardHover {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
-    }
-    
-    /* Video Overlay Effect */
-    @keyframes videoOverlay {
-      0% { opacity: 0.3; }
-      50% { opacity: 0.7; }
-      100% { opacity: 0.3; }
-    }
-    
-    /* Custom Elements */
-    .logo-container {
-      perspective: 1000px;
-    }
-    
-    .logo-3d {
-      transform-style: preserve-3d;
-      animation: cosmicFloat 8s ease-in-out infinite;
-    }
-    
-    .logo-glow {
-      animation: logoGlow 3s ease-in-out infinite alternate;
-    }
-    
-    .crescent-moon {
+    .islamic-border::after {
+      content: '';
       position: absolute;
-      top: -20px;
-      right: -20px;
-      font-size: 3rem;
-      color: #D4AF37;
-      transform: rotate(-30deg);
-      animation: crescentPulse 4s ease-in-out infinite;
-      text-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--emerald), transparent);
     }
     
-    .project-card {
-      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-      border: 1px solid rgba(16, 185, 129, 0.1);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    .particle {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: particleFlow linear infinite;
+      z-index: 0;
     }
     
-    .project-card:hover {
-      animation: cardHover 3s ease-in-out infinite;
-      box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.3);
-      border-color: rgba(16, 185, 129, 0.3);
+    @keyframes particleFlow {
+      0% { transform: translate(0, 0) scale(1); opacity: 0; }
+      10% { opacity: 0.5; }
+      50% { opacity: 1; transform: scale(1.5); }
+      90% { opacity: 0.5; }
+      100% { transform: translate(var(--tx), var(--ty)) scale(0.5); opacity: 0; }
     }
     
     .video-container {
@@ -127,6 +126,7 @@
       height: 0;
       overflow: hidden;
       border-radius: 0.5rem;
+      background: #000;
     }
     
     .video-container iframe {
@@ -138,220 +138,203 @@
       border: none;
     }
     
-    .video-overlay {
+    .video-placeholder {
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
+      width: 100%;
+      height: 100%;
       background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(6, 182, 212, 0.3));
       display: flex;
       align-items: center;
       justify-content: center;
-      opacity: 0.5;
-      transition: all 0.3s ease;
-      animation: videoOverlay 5s ease-in-out infinite;
+      transition: opacity 0.3s ease;
     }
     
-    .video-container:hover .video-overlay {
+    .video-container.loaded .video-placeholder {
       opacity: 0;
-    }
-    
-    .islamic-border {
-      position: relative;
-    }
-    
-    .islamic-border::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #10B981, transparent);
-    }
-    
-    /* Particle System */
-    .particle {
-      position: absolute;
-      border-radius: 50%;
       pointer-events: none;
-      animation: particleFlow linear infinite;
     }
     
-    @keyframes particleFlow {
-      0% { transform: translate(0, 0) scale(1); opacity: 0; }
-      10% { opacity: 0.5; }
-      50% { opacity: 1; transform: scale(1.5); }
-      90% { opacity: 0.5; }
-      100% { transform: translate(var(--tx), var(--ty)) scale(0.5); opacity: 0; }
-    }
-    
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .logo-text {
-        white-space: nowrap;
-      }
-      
-      .crescent-moon {
-        font-size: 2rem;
-        top: -15px;
-        right: -15px;
-      }
-      
-      .project-card {
-        animation: none;
-      }
-      
-      .project-card:hover {
-        animation: cardHover 3s ease-in-out infinite;
+    /* Optimized animations */
+    @media (prefers-reduced-motion: reduce) {
+      .particle, .video-placeholder, [class*="animate-"] {
+        animation: none !important;
       }
     }
   </style>
 </head>
-<body class="cosmic-bg min-h-screen flex flex-col items-center justify-center text-white overflow-x-hidden p-4">
-  <!-- Particle System -->
-  <div id="quantum-particles" class="fixed inset-0 pointer-events-none z-0"></div>
+<body class="relative overflow-x-hidden">
+  <!-- Quantum Particles Background -->
+  <div id="particles"></div>
   
-  <!-- Main Content -->
-  <div class="relative z-10 w-full max-w-6xl mx-auto text-center px-4">
-    <!-- Logo Section -->
-    <div class="logo-container mb-12">
-      <div class="logo-3d inline-block relative">
-        <div class="crescent-moon">
+  <!-- Main Content Container -->
+  <div class="relative z-10 max-w-6xl mx-auto px-4 py-12 w-full">
+    <!-- Logo & Header Section -->
+    <div class="text-center mb-16 animate-fade-in">
+      <div class="relative inline-block mb-8 animate-float">
+        <div class="absolute -top-6 -right-6 text-4xl text-yellow-400 animate-pulse-slow">
           <i class="fas fa-moon"></i>
         </div>
-        <img src="https://i.imgur.com/aVIjrGJ.png" alt="Logo BIMULIA LAND" class="logo-glow h-32 md:h-48 mx-auto">
+        <img src="https://i.imgur.com/aVIjrGJ.png" 
+             alt="BIMULIA LAND Logo" 
+             class="h-32 md:h-48 mx-auto animate-glow"
+             loading="eager">
       </div>
-      <h1 class="text-5xl md:text-7xl font-bold mt-6 mb-2 premium-gradient logo-text">BIMULIA LAND</h1>
-      <p class="text-xl md:text-2xl font-light opacity-90">
+      
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 premium-text">
+        BIMULIA LAND
+      </h1>
+      
+      <p class="text-xl md:text-2xl font-light mb-6">
         <span class="inline-block">Islamic Property</span>
         <span class="inline-block mx-2 text-emerald-400">•</span>
         <span class="inline-block">Visionary Development</span>
       </p>
-      <p class="mt-4 text-lg opacity-80 max-w-2xl mx-auto">
-        Membangun komunitas Islami modern dengan konsep hunian berkelas dunia
+      
+      <p class="text-lg opacity-90 max-w-2xl mx-auto">
+        Membangun komunitas Islami modern dengan konsep hunian berkelas dunia yang sesuai syariat
       </p>
     </div>
     
-    <!-- Project Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-      <!-- Kertamulya Card with Video -->
-      <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 relative overflow-hidden islamic-border">
-        <div class="absolute top-0 right-0 text-emerald-400 text-3xl p-4">
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+      <!-- Kertamulya Project -->
+      <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 shadow-xl islamic-border hover:shadow-emerald-500/20 transition-all duration-300">
+        <div class="absolute top-4 right-4 text-2xl text-emerald-400">
           <i class="fas fa-mosque"></i>
         </div>
-        <div class="video-container mb-6">
-          <iframe src="https://www.youtube.com/embed/6G_1fBYL18k?autoplay=1&mute=1&loop=1&controls=0&playlist=6G_1fBYL18k" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-          <div class="video-overlay">
+        
+        <h3 class="text-2xl font-bold mb-4 text-emerald-400">Kertamulya Residence</h3>
+        
+        <div class="video-container mb-6" id="yt-video">
+          <div class="video-placeholder">
             <i class="fas fa-play text-white text-4xl"></i>
           </div>
+          <!-- YouTube iframe will be loaded by JS -->
         </div>
-        <h3 class="text-2xl font-bold mb-2">Kertamulya Residence</h3>
-        <p class="opacity-80 mb-6">Perumahan Islami premium pertama di Kuningan dengan konsep Green Living</p>
+        
+        <p class="opacity-90 mb-6">
+          Perumahan Islami premium pertama di Kuningan dengan konsep Green Living dan fasilitas masjid terpadu
+        </p>
+        
         <a href="https://kertamulyaresidence.vercel.app/" 
-           class="inline-block px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-600 rounded-lg font-semibold text-white transition-all duration-300 hover:from-emerald-600 hover:to-green-700 hover:shadow-lg">
+           class="inline-block px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-600 rounded-lg font-semibold text-white transition-all hover:from-emerald-600 hover:to-green-700 hover:shadow-lg"
+           target="_blank"
+           rel="noopener noreferrer">
           Kunjungi Website <i class="fas fa-external-link-alt ml-2"></i>
         </a>
       </div>
       
-      <!-- Coming Soon Card -->
-      <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-8 relative overflow-hidden islamic-border">
-        <div class="absolute top-0 right-0 text-yellow-400 text-3xl p-4">
+      <!-- Coming Soon Project -->
+      <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-8 shadow-xl islamic-border hover:shadow-yellow-500/20 transition-all duration-300">
+        <div class="absolute top-4 right-4 text-2xl text-yellow-400">
           <i class="fas fa-city"></i>
         </div>
+        
         <div class="flex flex-col items-center justify-center h-full">
-          <div class="text-6xl text-yellow-400 mb-4">
+          <div class="text-5xl text-yellow-400 mb-6 animate-pulse">
             <i class="fas fa-hourglass-half"></i>
           </div>
-          <h3 class="text-2xl font-bold mb-4">Ekspansi Besar-besaran!</h3>
-          <p class="opacity-80 mb-6 text-lg">
+          
+          <h3 class="text-2xl font-bold mb-4 text-center">Ekspansi Besar-besaran!</h3>
+          
+          <p class="opacity-90 mb-6 text-center">
             BIMULIA LAND akan hadir di <span class="text-emerald-400 font-semibold">25 kota/kabupaten</span> Jawa Barat dengan konsep properti Islami terkini!
           </p>
-          <div class="w-full bg-gray-700 rounded-full h-2 mb-6">
-            <div class="bg-gradient-to-r from-yellow-400 to-yellow-600 h-2 rounded-full animate-pulse" style="width: 45%"></div>
+          
+          <div class="w-full bg-gray-700 rounded-full h-2.5 mb-6">
+            <div class="bg-gradient-to-r from-yellow-400 to-yellow-600 h-2.5 rounded-full" style="width: 45%"></div>
           </div>
-          <div class="inline-block px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg font-semibold text-white">
+          
+          <div class="px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg font-semibold text-white inline-block">
             Segera Hadir <i class="fas fa-clock ml-2"></i>
           </div>
         </div>
       </div>
     </div>
     
-    <!-- Islamic Business Values -->
-    <div class="mt-16 bg-gradient-to-br from-emerald-900/30 to-blue-900/30 rounded-xl p-8 max-w-2xl mx-auto relative overflow-hidden">
-      <div class="absolute -top-10 -left-10 text-emerald-400 text-6xl opacity-20">
+    <!-- Islamic Values -->
+    <div class="bg-gradient-to-br from-emerald-900/30 to-blue-900/30 rounded-xl p-8 mb-20 max-w-2xl mx-auto relative overflow-hidden">
+      <div class="absolute -top-8 -left-8 text-emerald-400 text-5xl opacity-20">
         <i class="fas fa-star"></i>
       </div>
-      <div class="absolute -bottom-10 -right-10 text-blue-400 text-6xl opacity-20">
+      <div class="absolute -bottom-8 -right-8 text-blue-400 text-5xl opacity-20">
         <i class="fas fa-star"></i>
       </div>
-      <h3 class="text-xl font-bold mb-4 text-emerald-400">Nilai Bisnis Islami Kami</h3>
+      
+      <h3 class="text-xl font-bold mb-6 text-emerald-400 text-center">Nilai Bisnis Islami Kami</h3>
+      
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="flex items-start">
-          <div class="text-emerald-400 text-2xl mr-4">
+          <div class="text-emerald-400 text-2xl mr-4 mt-1">
             <i class="fas fa-hand-holding-heart"></i>
           </div>
           <div>
             <h4 class="font-bold mb-2">Transaksi Jujur</h4>
-            <p class="text-sm opacity-80">Setiap transaksi dilakukan dengan kejujuran dan transparansi penuh</p>
+            <p class="text-sm opacity-90">Mengikuti sunnah Nabi dalam berbisnis dengan kejujuran dan transparansi</p>
           </div>
         </div>
+        
         <div class="flex items-start">
-          <div class="text-blue-400 text-2xl mr-4">
+          <div class="text-blue-400 text-2xl mr-4 mt-1">
             <i class="fas fa-balance-scale-right"></i>
           </div>
           <div>
             <h4 class="font-bold mb-2">Harga Adil</h4>
-            <p class="text-sm opacity-80">Harga kompetitif tanpa eksploitasi terhadap pembeli</p>
+            <p class="text-sm opacity-90">Menghindari gharar dan riba dalam setiap transaksi properti</p>
           </div>
         </div>
+        
         <div class="flex items-start">
-          <div class="text-yellow-400 text-2xl mr-4">
+          <div class="text-yellow-400 text-2xl mr-4 mt-1">
             <i class="fas fa-handshake"></i>
           </div>
           <div>
             <h4 class="font-bold mb-2">Menepati Janji</h4>
-            <p class="text-sm opacity-80">Komitmen kuat untuk memenuhi semua perjanjian</p>
+            <p class="text-sm opacity-90">"Orang-orang yang menepati janji apabila berjanji" (QS. Al-Baqarah: 177)</p>
           </div>
         </div>
+        
         <div class="flex items-start">
-          <div class="text-purple-400 text-2xl mr-4">
+          <div class="text-purple-400 text-2xl mr-4 mt-1">
             <i class="fas fa-lightbulb"></i>
           </div>
           <div>
             <h4 class="font-bold mb-2">Inovasi Syar'i</h4>
-            <p class="text-sm opacity-80">Konsep properti modern yang sesuai syariat Islam</p>
+            <p class="text-sm opacity-90">Konsep modern yang tetap mempertahankan nilai-nilai Islam</p>
           </div>
         </div>
       </div>
     </div>
     
-    <!-- Coming Soon Projects -->
-    <div class="mt-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-8 max-w-2xl mx-auto relative overflow-hidden">
-      <div class="absolute -top-10 -right-10 text-emerald-400 text-6xl opacity-20">
-        <i class="fas fa-globe"></i>
+    <!-- Expansion Plan -->
+    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-8 mb-20 max-w-2xl mx-auto relative overflow-hidden">
+      <div class="absolute -top-8 -right-8 text-emerald-400 text-5xl opacity-20">
+        <i class="fas fa-globe-asia"></i>
       </div>
-      <h3 class="text-xl font-bold mb-2 text-emerald-400">PETA EKSPANSI 2025-2030</h3>
-      <p class="opacity-90 mb-6">BIMULIA LAND akan menghadirkan konsep properti Islami premium di seluruh Jawa Barat</p>
       
-      <div class="grid grid-cols-3 gap-4 text-center mb-6">
+      <h3 class="text-xl font-bold mb-4 text-emerald-400">PETA EKSPANSI 2025-2030</h3>
+      
+      <p class="opacity-90 mb-6">
+        BIMULIA LAND berkomitmen menghadirkan konsep properti Islami premium di seluruh Jawa Barat dalam 5 tahun ke depan
+      </p>
+      
+      <div class="grid grid-cols-3 gap-4 text-center mb-8">
         <div class="bg-emerald-900/30 rounded-lg p-3">
           <div class="text-3xl text-emerald-400 mb-2">
             <i class="fas fa-mosque"></i>
           </div>
           <p class="text-sm font-semibold">25+ Projek</p>
         </div>
+        
         <div class="bg-blue-900/30 rounded-lg p-3">
           <div class="text-3xl text-blue-400 mb-2">
             <i class="fas fa-city"></i>
           </div>
           <p class="text-sm font-semibold">15 Kab/Kota</p>
         </div>
+        
         <div class="bg-purple-900/30 rounded-lg p-3">
           <div class="text-3xl text-purple-400 mb-2">
             <i class="fas fa-home"></i>
@@ -360,88 +343,98 @@
         </div>
       </div>
       
-      <div class="w-full bg-gray-700 rounded-full h-3">
+      <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
         <div class="bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 h-3 rounded-full" style="width: 35%"></div>
       </div>
-      <p class="text-right text-xs mt-2 opacity-70">Progress Ekspansi: 35%</p>
+      
+      <p class="text-right text-xs opacity-70">Progress Ekspansi: 35%</p>
     </div>
     
     <!-- Islamic Quote -->
-    <div class="mt-16 bg-gradient-to-br from-emerald-900/30 to-blue-900/30 rounded-xl p-6 max-w-2xl mx-auto text-center">
+    <div class="bg-gradient-to-br from-emerald-900/30 to-blue-900/30 rounded-xl p-6 mb-16 max-w-2xl mx-auto text-center">
       <p class="text-lg italic mb-2">"Rumah terbaik adalah rumah yang baik penghuninya"</p>
-      <p class="arabic-font text-xl mb-4">"خير البيوت بيت فيه يتيم يكرم"</p>
+      <p class="arabic text-xl mb-4">"خير البيوت بيت فيه يتيم يكرم"</p>
       <p class="text-sm opacity-70">- Nabi Muhammad ﷺ</p>
     </div>
     
     <!-- Footer -->
-    <div class="mt-16 opacity-70 text-sm">
+    <div class="text-center opacity-80 text-sm">
       <p>© 2025 <span class="font-bold text-emerald-400">BIMULIA LAND</span> - PT. Rumah Mulia Indonesia</p>
-      <p class="mt-2 text-xs opacity-50">Islamic Property Visionary - Taufik Marie All Rights Reserved</p>
+      <p class="mt-2 text-xs opacity-50">Islamic Property Visionary - All Rights Reserved</p>
     </div>
   </div>
   
+  <!-- Optimized JavaScript -->
   <script>
-    // Quantum Particle System
     document.addEventListener('DOMContentLoaded', function() {
-      const container = document.getElementById('quantum-particles');
-      const particleCount = window.innerWidth < 768 ? 50 : 100;
-      
-      // Color palette
-      const colors = [
-        'rgba(16, 185, 129, 0.7)',  // Emerald
-        'rgba(212, 175, 55, 0.7)',   // Gold
-        'rgba(34, 211, 238, 0.7)',   // Cyan
-        'rgba(249, 212, 35, 0.7)',   // Yellow
-        'rgba(139, 92, 246, 0.7)'    // Purple
-      ];
-      
-      // Create particles
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
+      // Create quantum particles
+      function createParticles() {
+        const container = document.getElementById('particles');
+        const colors = [
+          'rgba(16, 185, 129, 0.7)',  // Emerald
+          'rgba(212, 175, 55, 0.7)',   // Gold
+          'rgba(34, 211, 238, 0.7)',   // Cyan
+          'rgba(249, 212, 35, 0.7)'    // Yellow
+        ];
         
-        // Random properties
-        const size = Math.random() * 6 + 2;
-        const posX = Math.random() * 100;
-        const posY = Math.random() * 100;
-        const duration = Math.random() * 20 + 10;
-        const delay = Math.random() * 10;
-        const tx = (Math.random() - 0.5) * 300;
-        const ty = (Math.random() - 0.5) * 300;
-        const color = colors[Math.floor(Math.random() * colors.length)];
+        const particleCount = window.innerWidth < 768 ? 30 : 60;
         
-        // Apply styles
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.left = `${posX}%`;
-        particle.style.top = `${posY}%`;
-        particle.style.backgroundColor = color;
-        particle.style.setProperty('--tx', `${tx}px`);
-        particle.style.setProperty('--ty', `${ty}px`);
-        particle.style.animation = `particleFlow ${duration}s ease-in-out ${delay}s infinite`;
-        
-        container.appendChild(particle);
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          
+          const size = Math.random() * 5 + 1;
+          const posX = Math.random() * 100;
+          const posY = Math.random() * 100;
+          const duration = Math.random() * 15 + 10;
+          const delay = Math.random() * 5;
+          const tx = (Math.random() - 0.5) * 200;
+          const ty = (Math.random() - 0.5) * 200;
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.left = `${posX}%`;
+          particle.style.top = `${posY}%`;
+          particle.style.backgroundColor = color;
+          particle.style.setProperty('--tx', `${tx}px`);
+          particle.style.setProperty('--ty', `${ty}px`);
+          particle.style.animation = `particleFlow ${duration}s ease-in-out ${delay}s infinite`;
+          
+          container.appendChild(particle);
+        }
       }
       
-      // Interactive cursor glow
-      const cursorGlow = document.createElement('div');
-      cursorGlow.className = 'fixed rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2';
-      cursorGlow.style.width = '150px';
-      cursorGlow.style.height = '150px';
-      cursorGlow.style.background = 'radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%)';
-      cursorGlow.style.zIndex = '0';
-      cursorGlow.style.display = 'none';
-      document.body.appendChild(cursorGlow);
+      // Lazy load YouTube video
+      function loadYouTubeVideo() {
+        const videoContainer = document.getElementById('yt-video');
+        const iframe = document.createElement('iframe');
+        
+        iframe.src = 'https://www.youtube.com/embed/6G_1fBYL18k?autoplay=1&mute=1&loop=1&controls=0&playlist=6G_1fBYL18k&enablejsapi=1';
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('loading', 'lazy');
+        
+        iframe.onload = function() {
+          videoContainer.classList.add('loaded');
+        };
+        
+        videoContainer.appendChild(iframe);
+      }
       
-      document.addEventListener('mousemove', (e) => {
-        cursorGlow.style.left = `${e.clientX}px`;
-        cursorGlow.style.top = `${e.clientY}px`;
-        cursorGlow.style.display = 'block';
-      });
+      // Initialize everything
+      createParticles();
       
-      document.addEventListener('mouseout', () => {
-        cursorGlow.style.display = 'none';
-      });
+      // Only load YouTube video when user interacts with the page
+      document.addEventListener('click', function initYouTube() {
+        loadYouTubeVideo();
+        document.removeEventListener('click', initYouTube);
+      }, { once: true });
+      
+      // Prevent scrolling
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100vh';
     });
   </script>
 </body>
